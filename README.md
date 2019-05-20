@@ -41,3 +41,5 @@ Steps to run the project
     9. Now test the data by passing the JWT token to any of the get requests from postman
 
     10. Sample endpoint is /api/v1/books/listall
+
+    11. To list all the endpoints navigate to "http://localhost:8080/swagger-ui.html#/books-controller"
