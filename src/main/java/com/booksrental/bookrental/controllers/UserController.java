@@ -1,4 +1,4 @@
-package com.booksrental.bookrental.controller;
+package com.booksrental.bookrental.controllers;
 
 import com.booksrental.bookrental.model.ApplicationUser;
 //import com.booksrental.bookrental.service.CustomUserDetailsService;
@@ -26,6 +26,7 @@ public class UserController {
 
     @PostMapping("/signup")
     public void signup(@Valid @RequestBody ApplicationUser applicationUser) {
+        log.info("Creating new user {}", applicationUser);
         applicationUser.setPassword(bCryptPasswordEncoder.encode(applicationUser.getPassword()));
         userRepository.save(applicationUser);
     }

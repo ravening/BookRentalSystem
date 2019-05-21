@@ -27,9 +27,13 @@ Steps to run the project
         or you can create new user using below command
 
         curl -H "Content-Type: application/json" -X POST -d '{
-            "username": "admin",
-            "password": "password"
-        }' http://localhost:8080/users/sign-up
+            "firstname": "<your first name>",
+            "lastname": "<your last name>",
+            "username": "<your email address>",
+            "password": "<your password>",
+            "phone": "<your phone>",
+            "enabled": "true"
+        }' http://localhost:8080/api/v1/user/signup
 
     8. Now try to login using the below command
 
@@ -43,3 +47,8 @@ Steps to run the project
     10. Sample endpoint is /api/v1/books/listall
 
     11. To list all the endpoints navigate to "http://localhost:8080/swagger-ui.html#/books-controller"
+
+
+For more information related to JWT, refer
+
+https://auth0.com/blog/implementing-jwt-authentication-on-spring-boot/

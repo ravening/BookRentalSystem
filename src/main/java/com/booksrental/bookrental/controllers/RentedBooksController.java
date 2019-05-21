@@ -1,4 +1,4 @@
-package com.booksrental.bookrental.controller;
+package com.booksrental.bookrental.controllers;
 
 import com.booksrental.bookrental.exception.RentedBookNotFoundException;
 import com.booksrental.bookrental.model.RentedBooks;

@@ -1,4 +1,4 @@
-package com.booksrental.bookrental.controller;
+package com.booksrental.bookrental.controllers;
 
 import com.booksrental.bookrental.model.Book;
 import com.booksrental.bookrental.service.BookService;
