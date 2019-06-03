@@ -1,6 +1,7 @@
 package com.booksrental.bookrental.controllers;
 
 import com.booksrental.bookrental.model.googlebook.GoogleBook;
+import io.micrometer.core.annotation.Timed;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ public class GoogleBooksController {
 
     private final String googleBooksApiUrl = "https://www.googleapis.com/books/v1/";
     @GetMapping(value = "/bookname/{name}", produces = "application/json")
+    @Timed("google-books")
     public ResponseEntity<GoogleBook> getBooks(@PathVariable("name") String name) {
         name = name.replaceAll(" ", "%20");
         String url = googleBooksApiUrl + "/volumes?q=" + name + "&maxResults=40";

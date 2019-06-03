@@ -3,6 +3,7 @@ package com.booksrental.bookrental.controllers;
 import com.booksrental.bookrental.model.Book;
 import com.booksrental.bookrental.service.BookService;
 import com.booksrental.bookrental.service.BookService;
+import io.micrometer.core.annotation.Timed;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
