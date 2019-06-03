@@ -19,7 +19,6 @@ public class GoogleBooksController {
 
     private final String googleBooksApiUrl = "https://www.googleapis.com/books/v1/";
     @GetMapping(value = "/bookname/{name}", produces = "application/json")
-    @Timed("google-books")
     public ResponseEntity<GoogleBook> getBooks(@PathVariable("name") String name) {
         name = name.replaceAll(" ", "%20");
         String url = googleBooksApiUrl + "/volumes?q=" + name + "&maxResults=40";

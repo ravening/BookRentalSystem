@@ -25,10 +25,10 @@ public class ActuatorConfig {
 //        return new DataSourceStatusProbe(dataSource);
 //    }
 
-//    @Bean
-//    MeterRegistryCustomizer<MeterRegistry> metricsCommonTag() {
-//        return registry -> registry.config().commonTags("app.name", "books-rental-app");
-//    }
+    @Bean
+    MeterRegistryCustomizer<MeterRegistry> metricsCommonTag() {
+        return registry -> registry.config().commonTags("application", "books-rental-app");
+    }
 
     @Bean
     TimedAspect timedAspect(MeterRegistry registry) {
