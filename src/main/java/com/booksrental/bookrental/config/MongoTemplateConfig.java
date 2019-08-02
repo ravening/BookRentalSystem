@@ -37,14 +37,14 @@ public class MongoTemplateConfig extends AbstractMongoConfiguration {
         return new MongoClient(databaseHost);
 }
 
-    @Bean
-    public MongoTemplate getMongoTemplate() throws UnknownHostException {
-        MappingMongoConverter converter = new MappingMongoConverter(
-                new DefaultDbRefResolver(mongoDbFactory()), new MongoMappingContext());
-        converter.setCustomConversions(customConversions());
-        converter.afterPropertiesSet();
-        return new MongoTemplate(mongoDbFactory(), converter);
-    }
+//    @Bean
+//    public MongoTemplate getMongoTemplate() throws UnknownHostException {
+//        MappingMongoConverter converter = new MappingMongoConverter(
+//                new DefaultDbRefResolver(mongoDbFactory()), new MongoMappingContext());
+//        converter.setCustomConversions(customConversions());
+//        converter.afterPropertiesSet();
+//        return new MongoTemplate(mongoDbFactory(), converter);
+//    }
 
     public @Bean
     MongoDbFactory mongoDbFactory()  {
@@ -56,10 +56,10 @@ public class MongoTemplateConfig extends AbstractMongoConfiguration {
 //        return new MongoClient("localhost");
 //    }
 
-    @Bean
-    public MongoTemplate mongoTemplate() {
-        return new MongoTemplate(mongoClient(), databaseName);
-    }
+//    @Bean
+//    public MongoTemplate mongoTemplate() {
+//        return new MongoTemplate(mongoClient(), databaseName);
+//    }
 
     @Bean
     public MongoCustomConversions customConversions() {

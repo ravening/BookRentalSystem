@@ -1,5 +1,6 @@
 package com.booksrental.bookrental.controllers;
 
+import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.booksrental.bookrental.model.Book;
 import com.booksrental.bookrental.service.BookService;
 import com.booksrental.bookrental.service.BookService;
@@ -32,7 +33,7 @@ public class BooksController {
     }
 
     @GetMapping("/listall")
-    public ResponseEntity getAllBooks() {
+    public ResponseEntity getAllBooks() throws TokenExpiredException {
         log.info("Fetching all the books");
         return ResponseEntity.ok().body(booksService.getAllBooks());
     }
